@@ -4,50 +4,51 @@
 To develop a Simple Spring Boot MVC (Model-View-Controller) Application that uses a Controller to handle HTTP requests, a Model to pass data, and a View (Thymeleaf) to render dynamic HTML pages.
 
 ## ALGORITHM:
-Create a New Spring Boot Project:
+1.Create a New Spring Boot Project:
 
-Use Spring Initializr
+2.Use Spring Initializr
 
-Add dependencies:
+3.Add dependencies:
 
-Spring Web
+- Spring Web
 
-Thymeleaf
+- Thymeleaf
 
-Set Up Project Structure:
+4.Set Up Project Structure:
 
-Create the main class annotated with @SpringBootApplication
+- Create the main class annotated with @SpringBootApplication
 
-Create a Controller class using @Controller
+- Create a Controller class using @Controller
 
-Add HTML templates under src/main/resources/templates
+- Add HTML templates under src/main/resources/templates
 
-Create a Controller:
+- Create a Controller:
 
-Define a method to handle HTTP GET requests using @GetMapping
+- Define a method to handle HTTP GET requests using @GetMapping
 
-Return a view name (HTML page name) from the controller
+- Return a view name (HTML page name) from the controller
 
-Pass data to the view using Model object
+- Pass data to the view using Model object
 
-Create a Model (Optional):
+5. Create a Model (Optional):
 
 Define a simple POJO class if you need to pass structured data to the view
 
-Create View Pages (HTML using Thymeleaf):
+6. Create View Pages (HTML using Thymeleaf):
 
 Create an HTML file inside the templates folder
 
 Use Thymeleaf syntax (e.g., ${name}) to render dynamic content
 
-Run the Application:
+7. Run the Application:
 
 Run the Spring Boot application from your IDE or command line
 
 Access the Application:
 
-Open a browser and navigate to http://localhost:8080/
+Open a browser and navigate to http://localhost:8082/
 ## PROGRAM
+```
 spring-mvc-demo/
 ├── src/
 │   └── main/
@@ -60,7 +61,7 @@ spring-mvc-demo/
 │           │   └── index.html
 │           └── application.properties
 ├── pom.xml
-
+```
 ### pom.xml :
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -96,7 +97,7 @@ spring-mvc-demo/
 </project>
 
 ### MvcApplication.java (Main Class):
-
+```java
 package com.example.mvc;
 
 import org.springframework.boot.SpringApplication;
@@ -108,9 +109,9 @@ public class MvcApplication {
         SpringApplication.run(MvcApplication.class, args);
     }
 }
-
+```
 ### HomeController.java (Controller):
-
+```java
 package com.example.mvc;
 
 import org.springframework.stereotype.Controller;
@@ -126,6 +127,7 @@ public class HomeController {
         return "index";  // refers to index.html in templates folder
     }
 }
+```
 ### index.html (View – inside src/main/resources/templates/):
 
 <!DOCTYPE html>
@@ -139,6 +141,15 @@ public class HomeController {
 </html>
 
 ### application.properties:
- server.port=8081
+ server.port=8082
+
+### Output:
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/b5feed12-2373-4b4b-85a2-82bebd868375" />
 
 
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/68be863b-8ed0-4d75-b8b9-b2780a7307e6" />
+
+### result:
+
+Thus, the Simple Spring Boot MVC Application was successfully developed and executed using Maven and Thymeleaf. The welcome message was displayed successfully in the web browser.
